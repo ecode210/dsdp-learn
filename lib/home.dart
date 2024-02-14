@@ -64,9 +64,6 @@ class _HomeState extends State<Home> {
               ),
               const SizedBox(height: 20),
               GestureDetector(
-                onTap: () {
-                  print(123);
-                },
                 child: Container(
                   height: 60,
                   width: 500,
