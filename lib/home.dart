@@ -1,3 +1,5 @@
+import 'package:demo/forgot_password.dart';
+import 'package:demo/otp_verification.dart';
 import 'package:demo/widgets/app_text_field.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +23,7 @@ class _HomeState extends State<Home> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 50),
+              const SizedBox(height: 70),
               const Text(
                 "Login to your\nAccount",
                 style: TextStyle(
@@ -59,11 +61,14 @@ class _HomeState extends State<Home> {
                       color: Colors.black,
                       fontWeight: FontWeight.w600,
                     ),
-                  )
+                  ),
                 ],
               ),
               const SizedBox(height: 20),
               GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const OTPVerification()));
+                },
                 child: Container(
                   height: 60,
                   width: 500,
@@ -77,18 +82,24 @@ class _HomeState extends State<Home> {
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.white,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 ),
               ),
               const SizedBox(height: 10),
-              Center(
-                child: Text(
-                  "Forgot the password",
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Theme.of(context).colorScheme.primary,
-                    fontWeight: FontWeight.w700,
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ForgotPassword()));
+                },
+                child: Center(
+                  child: Text(
+                    "Forgot the password",
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Theme.of(context).colorScheme.primary,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
               ),
